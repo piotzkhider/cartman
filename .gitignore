@@ -1,0 +1,8 @@
+.idea
+
+.serverless
+.webpack
+node_modules
+.env
+
+yarn.lock
