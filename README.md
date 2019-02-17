@@ -40,5 +40,5 @@ const defaultTeams: string[] = ['team1', 'team2'];
 3. Deploy a Service:
 
 ```sh
-$ sls deploy
+sls deploy
 ```
