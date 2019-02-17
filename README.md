@@ -8,12 +8,24 @@
   cartman - A cartman who carts newcomer off to jails.
 </h2>
 
-## Usage
+## Quick Start
+
+1. Install via yarn:
+
+```sh
+yarn
+```
+
+2. Set-up:
+
+example)
 
 serverless.yml
 
 ```yml
 provider:
+  ...
+  region: ap-northeast-1
   ...
   environment:
     GITHUB_ACCESS_TOKEN: your_access_token123
@@ -24,5 +36,11 @@ handler.ts
 
 ```ts
 const organization: string = 'YourOrganization';
-const defaultTeams: string[] = ['jail1', 'jail2'];
+const defaultTeams: string[] = ['team1', 'team2'];
+```
+
+3. Deploy a Service:
+
+```sh
+$ sls deploy
 ```
