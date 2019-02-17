@@ -4,7 +4,7 @@ import { addUserToOrganizationTeams } from './src/addition';
 import Body from './src/body';
 
 const organization: string = '<your_organization>';
-const defaultTeams: string[] = ['<your_default_teams>'];
+const defaultTeams: string[] = ['<your_default_team1>', '<your_default_team2>'];
 
 export const hello: APIGatewayProxyHandler = async event => {
   const headers = event.headers;
