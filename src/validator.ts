@@ -60,7 +60,7 @@ export default class Validator {
       };
     }
 
-    if (!verifySignature(JSON.stringify(this.body))) {
+    if (!verifySignature(signature, JSON.stringify(this.body))) {
       this.result = {
         statusCode: 401,
         headers: { 'Content-Type': 'text/plain' },
