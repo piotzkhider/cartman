@@ -1,8 +1,8 @@
 {
-  "name": "template-serverless-typescript",
+  "name": "cartman",
   "private": true,
   "version": "1.0.0",
-  "description": "Serverless webpack example using Typescript",
+  "description": "Cart newcomer off to jails",
   "main": "handler.js",
   "scripts": {
     "lint": "tslint --fix handler.ts 'src/**/*.ts{,x}'",
