@@ -19,7 +19,7 @@ export default class Validator {
 
   fails(): boolean {
     const signature = this.headers['X-Hub-Signature'] as string;
-    const guid = this.headers['X-Github-Delivery'] as string;
+    const guid = this.headers['X-GitHub-Delivery'] as string;
     const event = this.headers['X-GitHub-Event'] as string;
 
     if (!signature) {
