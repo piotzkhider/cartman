@@ -2,7 +2,7 @@
   "name": "cartman",
   "private": true,
   "version": "1.0.0",
-  "description": "Cart newcomer off to jails",
+  "description": "Cartman carts newcomer off to jails",
   "main": "handler.js",
   "scripts": {
     "lint": "tslint --fix handler.ts 'src/**/*.ts{,x}'",
