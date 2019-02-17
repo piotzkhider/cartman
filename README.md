@@ -18,8 +18,6 @@ yarn
 
 2. Set-up:
 
-example)
-
 serverless.yml
 
 ```yml
