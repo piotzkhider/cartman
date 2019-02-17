@@ -1,10 +1,7 @@
 import { APIGatewayProxyHandler } from 'aws-lambda';
-import * as dotenv from 'dotenv';
 import Validator from './src/validator';
 import { addUserToOrganizationTeams } from './src/addition';
 import Body from './src/body';
-
-dotenv.config();
 
 const organization: string = '<your_organization>';
 const defaultTeams: string[] = ['<your_default_teams>'];

@@ -10,6 +10,9 @@ provider:
   name: aws
   region: ap-northeast-1
   runtime: nodejs8.10
+  environment:
+    GITHUB_ACCESS_TOKEN: <your_access_token>
+    GITHUB_WEBHOOK_SECRET: <your_webhook_secret>
 
 functions:
   hello:

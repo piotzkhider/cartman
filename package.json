@@ -9,12 +9,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@octokit/rest": "^16.15.0",
-    "dotenv": "^6.2.0"
+    "@octokit/rest": "^16.15.0"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.19",
-    "@types/dotenv": "^6.1.0",
     "@types/node": "^11.9.4",
     "prettier": "^1.16.4",
     "serverless-offline": "^4.4.2",
