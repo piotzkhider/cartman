@@ -8,7 +8,7 @@ plugins:
 
 provider:
   name: aws
-  region: ap-northeast-1
+  region: <your_region>
   runtime: nodejs8.10
   environment:
     GITHUB_ACCESS_TOKEN: <your_access_token>
