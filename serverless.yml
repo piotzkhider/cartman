@@ -5,14 +5,40 @@ service:
 plugins:
   - serverless-webpack
   - serverless-offline
+  - serverless-prune-plugin
+  - serverless-reqvalidator-plugin
+  - serverless-aws-documentation
+
+custom:
+  prune:
+    automatic: true
+    number: 3
+  documentation:
+    models:
+      - name: MemberAdded
+        description: 'Model for member added'
+        contentType: application/json
+        schema: ${file(models/member_added.json)}
 
 provider:
   name: aws
   region: <your_region>
   runtime: nodejs8.10
+  logRetentionInDays: 1
   environment:
     GITHUB_ACCESS_TOKEN: <your_access_token>
     GITHUB_WEBHOOK_SECRET: <your_webhook_secret>
+
+resources:
+  Resources:
+    bodyAndParams:
+      Type: AWS::ApiGateway::RequestValidator
+      Properties:
+        Name: body-and-params
+        RestApiId:
+          Ref: ApiGatewayRestApi
+        ValidateRequestBody: true
+        ValidateRequestParameters: true
 
 functions:
   hello:
@@ -21,3 +47,14 @@ functions:
       - http:
           method: post
           path: hello
+          documentation:
+            requestHeaders:
+              - name: X-Hub-Signature
+                required: true
+              - name: X-GitHub-Delivery
+                required: true
+              - name: X-GitHub-Event
+                required: true
+            requestModels:
+              application/json: MemberAdded
+          reqValidatorName: bodyAndParams
