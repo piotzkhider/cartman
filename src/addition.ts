@@ -5,7 +5,7 @@ const octokit = new Octkit({
 });
 
 export async function addUserToOrganizationTeams(
-  user: User,
+  user: string,
   organization: string,
   teamNames: string[]
 ) {
@@ -23,19 +23,15 @@ async function retrieveTeamsByCriteria(criteria: Criteria): Promise<Team[]> {
   return response.data.filter(team => criteria.names.includes(team.name));
 }
 
-async function addUserToTeams(user: User, teams: Team[]) {
-  return Promise.all(teams.map(team => addUserToTeam(user, team)));
+async function addUserToTeams(user: string, teams: Team[]) {
+  return Promise.all(teams.map(team => addUserToTeam(user, team.id)));
 }
 
-async function addUserToTeam(user: User, team: Team) {
+async function addUserToTeam(user: string, team: number) {
   return octokit.teams.addOrUpdateMembership({
-    team_id: team.id,
-    username: user.login
+    team_id: team,
+    username: user
   });
-}
-
-export interface User {
-  login: string;
 }
 
 interface Team {
