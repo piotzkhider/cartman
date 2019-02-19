@@ -23,8 +23,6 @@ serverless.yml
 ```yml
 provider:
   ...
-  region: ap-northeast-1
-  ...
   environment:
     GITHUB_ACCESS_TOKEN: your_access_token123
     GITHUB_WEBHOOK_SECRET: your_webhook_secret456
@@ -33,7 +31,6 @@ provider:
 handler.ts
 
 ```ts
-const organization: string = 'YourOrganization';
 const defaultTeams: string[] = ['team1', 'team2'];
 ```
 
